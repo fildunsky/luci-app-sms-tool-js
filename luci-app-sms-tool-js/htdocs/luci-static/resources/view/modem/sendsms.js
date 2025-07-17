@@ -187,7 +187,7 @@ return view.extend({
 		ui.addNotification(null, E('p', _('The phone number should be preceded by the country prefix (for Poland it is 48, without +). If the number is 5, 4 or 3 characters, it is treated as.. short and should not be preceded by a country prefix.') ), 'info');
 	}
 		
-		let info = _('User interface for sending messages using sms-tool. More information about the sms-tool on the %seko.one.pl forum%s.').format('<a href="https://eko.one.pl/?p=openwrt-sms_tool" target="_blank">', '</a>');
+		let info = _('User interface for sending messages using sms-tool.').format('');
 	
 		return E('div', { 'class': 'cbi-map', 'id': 'map' }, [
 				E('h2', {}, [ _('SMS Messages') ]),

@@ -104,7 +104,7 @@ return view.extend({
 
 	render: function (loadResults) {
 	
-	let info = _('User interface for sending AT commands using sms-tool. More information about the sms-tool on the %seko.one.pl forum%s.').format('<a href="https://eko.one.pl/?p=openwrt-sms_tool" target="_blank">', '</a>');
+	let info = _('User interface for sending AT commands using sms-tool.').format('');
 	
 		return E('div', { 'class': 'cbi-map', 'id': 'map' }, [
 				E('h2', {}, [ _('AT Commands') ]),

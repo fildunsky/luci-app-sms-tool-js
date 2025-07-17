@@ -535,7 +535,7 @@ return view.extend({
 
 		var v = E([], [
 			E('h2', _('SMS Messages')),
-			E('div', { 'class': 'cbi-map-descr' }, _('User interface for reading messages using sms-tool. More information about the sms-tool on the %seko.one.pl forum%s.').format('<a href="https://eko.one.pl/?p=openwrt-sms_tool" target="_blank">', '</a>')),
+			E('div', { 'class': 'cbi-map-descr' }, _('User interface for reading messages using sms-tool.').format('')),
 
 			E('h3', _('Received Messages')),
 			E('table', { 'class': 'table' }, [
