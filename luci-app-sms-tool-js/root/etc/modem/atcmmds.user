@@ -1,2 +1,6 @@
-Signal Quality/Strength ➜ AT+CSQ;AT+CSQ
-
+О модеме ➜ ATI;ATI
+Какой сейчас CUSTOMER ➜ AT^CUSTOMER?;AT^CUSTOMER?
+Качество сигнала ➜ AT+CSQ;AT+CSQ
+Аггрегации ➜ AT^CA_INFO?;AT^CA_INFO?
+Скорость USB ➜ AT^USBTYPE?;AT^USBTYPE?
+Перезагрузка модема ➜ AT+CFUN=1,1;AT+CFUN=1,1
