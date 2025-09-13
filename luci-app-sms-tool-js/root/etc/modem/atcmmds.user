@@ -1,6 +1,9 @@
-О модеме ➜ ATI;ATI
-Какой сейчас CUSTOMER ➜ AT^CUSTOMER?;AT^CUSTOMER?
+Модем ➜ ATI;ATI
+CUSTOMER ➜ AT^CUSTOMER?;AT^CUSTOMER?
 Качество сигнала ➜ AT+CSQ;AT+CSQ
 Аггрегации ➜ AT^CA_INFO?;AT^CA_INFO?
+Температура ➜ AT^TEMP?;AT^TEMP?
+Режим сети ➜ AT^SLMODE?;AT^SLMODE?
 Скорость USB ➜ AT^USBTYPE?;AT^USBTYPE?
-Перезагрузка модема ➜ AT+CFUN=1,1;AT+CFUN=1,1
+Отладка ➜ AT^DEBUG?;AT^DEBUG?
+Перезагрузка ➜ AT+CFUN=1,1;AT+CFUN=1,1
