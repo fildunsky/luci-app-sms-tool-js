@@ -2,13 +2,25 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
 msgid "SMS Messages"
-msgstr "Сообщения SMS"
+msgstr "Сообщения"
+
+msgid "User interface for reading messages using sms-tool."
+msgstr "Чтение сообщений через sms-tool."
+
+msgid "User interface for sending messages using sms-tool."
+msgstr "Отправка сообщений через sms-tool."
+
+msgid "User interface for sending USSD codes using sms-tool."
+msgstr "Отправка USSD запросов через mmcli."
+
+msgid "User interface for sending AT commands using sms-tool."
+msgstr "Отправка AT команд через sms-tool."
 
 msgid "Received Messages"
-msgstr "Полученные сообщения"
+msgstr "Получение"
 
 msgid "Send Messages"
-msgstr "Отправка сообщений"
+msgstr "Отправка"
 
 msgid "USSD"
 msgstr "USSD"
@@ -44,7 +56,7 @@ msgid "Please enter a USSD code"
 msgstr "Введите команду USSD"
 
 msgid "USSD Codes"
-msgstr "Команды USSD"
+msgstr "USSD"
 
 msgid "Send to"
 msgstr "Кому"
@@ -212,10 +224,10 @@ msgid "User interface for sending USSD codes using sms-tool. More information ab
 msgstr "Пользовательский интерфейс для отправки команд USSD с помощью программы sms-tool. Дополнительная информация о программе sms-tool на %sforum eko.one.pl%s."
 
 msgid "Configuration sms-tool"
-msgstr "Конфигурация sms-tool"
+msgstr "Настройка sms-tool"
 
 msgid "Configuration panel for sms-tool and gui application."
-msgstr "Панель настроек для sms-tool и пользовательского интерфейса."
+msgstr "Панель настроек интерфейса и sms-tool."
 
 msgid "Port for communication with the modem"
 msgstr "Порт для связи с модемом"
