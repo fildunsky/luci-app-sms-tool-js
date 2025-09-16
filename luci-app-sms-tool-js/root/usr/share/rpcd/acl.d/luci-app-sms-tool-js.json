@@ -5,6 +5,7 @@
    			"cgi-io": [ "exec" ],
     			"file": {
     				"/sys/class/leds": [ "list" ],
+				"/usr/bin/mmcli": [ "exec" ],
 				"/usr/bin/sms_tool": [ "exec" ],
 				"/etc/init.d/my_new_sms start" : [ "exec" ],
 				"/etc/init.d/my_new_sms stop" : [ "exec" ],
