@@ -24,6 +24,7 @@ return view.extend({
 			const reversereplies = document.getElementById('reverse-replies')?.checked;
 			out.style.display = '';
 
+
 			const strip = (s) => (s || '')
 				.replace(/\x1b\[[0-9;]*m/g, '')
 				.replace(/\r/g, '\n');
@@ -91,6 +92,7 @@ return view.extend({
 				if (cut.includes('error: 106')) res.stdout = _('Illegal ME.');
 				if (cut.includes('error: 107')) res.stdout = _('GPRS services not allowed.');
 				if (cut.includes('error: 111')) res.stdout = _('PLMN not allowed.');
+
 				if (cut.includes('error: 112')) res.stdout = _('Location area not allowed.');
 				if (cut.includes('error: 113')) res.stdout = _('Roaming not allowed in this location area.');
 				if (cut.includes('error: 126')) res.stdout = _('Operation temporary not allowed.');
@@ -132,8 +134,23 @@ return view.extend({
 		}).catch((err) => {
 			ui.addNotification(null, E('p', [ String(err) ]), 'danger');
 		}).finally(() => {
+
 			for (let i = 0; i < buttons.length; i++)
+
 				buttons[i].removeAttribute('disabled');
+		});
+	},
+
+	getModemNumber: function() {
+		return fs.exec('mmcli', ['-L']).then((res) => {
+			const out = ((res.stdout || '') + '\n' + (res.stderr || '')).trim();
+			let m = out.match(/Modem\/(\d+)/);
+			if (m && m[1]) return m[1];
+
+			m = out.match(/\/Modem\/(\d+)/);
+			if (m && m[1]) return m[1];
+
+			return Promise.reject(_('No modems found (mmcli -L returned empty).'));
 		});
 	},
 
@@ -145,7 +162,14 @@ return view.extend({
 			return false;
 		}
 
-		return this.handleCommand('mmcli', ['-m', '0', '--timeout=30', '--3gpp-ussd-initiate=' + ussd]);
+		return this.getModemNumber()
+			.then((modemNum) => {
+				return this.handleCommand('mmcli', ['-m', modemNum, '--timeout=30', '--3gpp-ussd-initiate=' + ussd]);
+			})
+			.catch((err) => {
+				const msg = (typeof err === 'string') ? err : String(err);
+				ui.addNotification(null, E('p', [ _('Failed to detect modem: ') + msg ]), 'danger');
+			});
 	},
 
 	handleClear: function(ev) {
@@ -217,6 +241,7 @@ return view.extend({
 								'class': 'cbi-input-select',
 								'id': 'tk',
 								'style': 'margin:5px 0; width:100%;',
+
 								'change': ui.createHandlerFn(this, 'handleCopy'),
 								'mousedown': ui.createHandlerFn(this, 'handleCopy')
 							},
@@ -301,4 +326,5 @@ return view.extend({
 	handleSave: null,
 	handleReset: null
 });
+
 
